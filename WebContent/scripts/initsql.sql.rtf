@@ -1,0 +1,89 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671
+{\fonttbl\f0\fswiss\fcharset0 Arial-BoldMT;\f1\froman\fcharset0 Times-Roman;\f2\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;}
+\margl1440\margr1440\vieww18160\viewh19380\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\b\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 DROP DATABASE IF EXISTS ticketplus;
+\f1\b0 \cb1 \
+
+\f0\b \cb3 CREATE DATABASE \cf2 \cb3 \outl0\strokewidth0  ticketplus\cf2 \cb3 \outl0\strokewidth0 \strokec2 ;
+\f1\b0 \cb1 \
+
+\f0\b \cb3 USE \cf2 \cb3 \outl0\strokewidth0  ticketplus\cf2 \cb3 \outl0\strokewidth0 \strokec2 ;
+\f1\b0 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+\
+CREATE TABLE `categories` (\
+  `item_id` varchar(255) NOT NULL,\
+  `category` varchar(255) NOT NULL\
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;\
+\
+\
+\
+CREATE TABLE `history` (\
+  `user_id` varchar(255) NOT NULL,\
+  `item_id` varchar(255) NOT NULL,\
+  `last_favor_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP\
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;\
+\
+\
+\
+\
+\
+CREATE TABLE `items` (\
+  `item_id` varchar(255) NOT NULL,\
+  `name` varchar(255) DEFAULT NULL,\
+  `rating` float DEFAULT NULL,\
+  `address` varchar(255) DEFAULT NULL,\
+  `image_url` varchar(255) DEFAULT NULL,\
+  `url` varchar(255) DEFAULT NULL,\
+  `distance` float DEFAULT NULL\
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;\
+\
+\
+\
+\
+CREATE TABLE `users` (\
+  `user_id` varchar(255) NOT NULL,\
+  `password` varchar(255) NOT NULL,\
+  `first_name` varchar(255) DEFAULT NULL,\
+  `last_name` varchar(255) DEFAULT NULL\
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;\
+\
+\
+\
+INSERT INTO `users` (`user_id`, `password`, `first_name`, `last_name`) VALUES\
+('1111', '3229c1097c00d497a0fd282d586be050', 'John', 'Doe'),\
+('guest', '7db6356cb90d34c8910efe5c349d7e17', 'Dear', 'Guest');\
+\
+ALTER TABLE `categories`\
+  ADD PRIMARY KEY (`item_id`,`category`);\
+\
+\
+ALTER TABLE `history`\
+  ADD PRIMARY KEY (`user_id`,`item_id`),\
+  ADD KEY `item_id` (`item_id`);\
+\
+\
+ALTER TABLE `items`\
+  ADD PRIMARY KEY (`item_id`);\
+\
+ALTER TABLE `users`\
+  ADD PRIMARY KEY (`user_id`);\
+\
+\
+ALTER TABLE `categories`\
+  ADD CONSTRAINT `categories_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `items` (`item_id`);\
+\
+\
+ALTER TABLE `history`\
+  ADD CONSTRAINT `history_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),\
+  ADD CONSTRAINT `history_ibfk_2` FOREIGN KEY (`item_id`) REFERENCES `items` (`item_id`);}

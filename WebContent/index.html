@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+       	<meta name="description" content="Events Recommendation">
+       	<meta name="author" content="Baozhen Chen">
+		<title>Ticket+: Event Recommendation</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="styles/main.css">
+	</head>
+
+	<body>
+		<header class="top-header">
+		
+			<nav class="top-nav">
+				<a href="">Home</a>
+				<a href="#name">Contact</a>
+				<a href="">About</a>
+			</nav>
+			<span id="welcome-msg"></span>
+			<a id="logout-link" href="logout">Logout</a>
+			<i id="avatar" class="avatar fa fa-user fa-2x"> </i>
+		</header>
+		
+		<div class="container">
+			<header>
+				<p>
+					<span>Events </span>
+					<br/> Recommendation
+				<p>
+			</header>
+			
+			<section class="main-section">
+		       <div id="login-form">
+		 	    <label for="username">Username:</label>
+		 	    <input id="username" name="username" type="text">
+		 	    <label for="password">Password:</label>
+		 	    <input id="password" name="password" type="password">
+		 	    <button id="login-btn">Login (Test User : guest/guest)</button>
+		 	    <p id="login-error"></p>
+		        </div>
+			
+			
+				<aside id="item-nav">
+					<div class="nav-icon">
+						<i class="fa fa-sitemap fa-2x"></i>
+					</div>
+				
+					<nav class="main-nav">
+						<a href="#" id="nearby-btn" class="main-nav-btn active">
+							<i class="fa fa-map-marker"></i>
+							Nearby Events
+						</a>
+						<a href="#" id="fav-btn" class="main-nav-btn">
+							My Favorites
+						</a>
+						<a href="#" id="recommend-btn" class="main-nav-btn">
+							Reommendation
+						</a>
+					</nav>
+				</aside>
+				
+				<ul id="item-list">
+					<li class="item">
+						<img alt="item image"  src="https://static.adweek.com/adweek.com-prod/wp-content/uploads/files/news_article/concert-hed-2014.jpg" />
+					
+						<div>
+							<a class="item-name" href="#"> Event </a>
+							<p class="item-category" > Music </p>
+							  	<div class="stars">
+					              	<i class="fa fa-star"></i>
+					              	<i class="fa fa-star"></i>
+					              	<i class="fa fa-star"></i>
+		            			</div>
+						</div>
+					<p class="item-address"> 99 Grove Street<br/>San Francisco<br/> CA</p>
+					<div class="fav-link">
+	            		<i class="fa fa-heart"></i>
+	          		</div>
+					
+					</li>
+				</ul>
+			</section>
+			
+		</div>
+		
+		<footer>
+			<p  class="title"> What do we do </p>
+			<p> "Find you the most interesting events near by." </p>
+			<ul>
+				<li>
+					<p><i class="fa fa-map-o fa-2x"></i></p>
+					<p> Boston, MA </p>
+				</li>
+				
+				<li>
+					<p><i class="fa fa-envelope-o fa-2x"></i></p>
+					<p>info@chenbaozhen.com</p>
+				</li>
+				
+				<li>
+					<p><i class="fa fa-phone fa-2x"></i></p>
+					<p>+1 800 123 4567</p>
+				</li>
+			</ul>
+		</footer>
+	  	<script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+  		<script src="scripts/main.js"></script>
+	
+	</body>
+</html>
